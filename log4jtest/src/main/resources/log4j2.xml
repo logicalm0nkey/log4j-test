@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project>
 <Configuration status="off">
+    <Properties>
+        <Property name="format1">[%d] %-5p [%t]: %m%n</Property>
+    </Properties>
     <Appenders>
-        <Console name="stdout"></Console>
+        <Console name="Console">
+            <PatternLayout>
+                <pattern>${format1}</pattern>
+            </PatternLayout>
+        </Console>
     </Appenders>
     <Loggers>
         <Root level="trace">
-            <AppenderRef ref="stdout" />
+            <AppenderRef ref="Console" />
         </Root>
     </Loggers>
 </Configuration>
